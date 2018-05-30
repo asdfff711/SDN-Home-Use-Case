@@ -144,7 +144,7 @@ if __name__ == '__main__':
     nhosts = int(sys.argv[2])
 
     net = Mininet( topo=None, build=False)
-    net.addController('c1',controller=RemoteController,ip='127.0.0.1',ptort=6633)
+    net.addController('c1',controller=RemoteController,ip='127.0.0.1',port=55555)
     # net.addController('c1',controller=RemoteController,ip='127.0.0.1',port=6653)
     dpid_list = []
     for sw in irange(1,nswitches):
@@ -167,7 +167,10 @@ if __name__ == '__main__':
     print "*** Hosts are running and should have internet connectivity"
     print "*** Type 'exit' or control-D to shut down network"
 
-
+    host11 = net.hosts[0]
+    host11.cmd('ifconfig h11-eth0 1.0.0.1/16')
+    host11.cmd('route add default gw 1.0.0.254')
+     
     CLI( net )
 
     # Shut down NAT
