@@ -1,0 +1,37 @@
+1527751584086	geckodriver	INFO	Listening on 127.0.0.1:60735
+1527751585091	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.HGH6szqujVw2
+1527751585092	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1527751585093	geckodriver::marionette	INFO	Connecting to Marionette on localhost:38077
+1527751585574	Marionette	INFO	Enabled via --marionette
+
+(firefox:9400): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Could not connect: Connection refused
+1527751586804	Marionette	INFO	Listening on port 38077
+1527751838499	geckodriver	INFO	Listening on 127.0.0.1:46763
+1527751839504	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.xVibDE6J2cAt
+1527751839508	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1527751839513	geckodriver::marionette	INFO	Connecting to Marionette on localhost:33691
+1527751840044	Marionette	INFO	Enabled via --marionette
+
+(firefox:9672): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Could not connect: Connection refused
+1527751841128	Marionette	INFO	Listening on port 33691
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///usr/lib/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 325: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///usr/lib/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 325: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///usr/lib/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 325: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///usr/lib/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 325: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]

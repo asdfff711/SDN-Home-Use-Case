@@ -42,6 +42,7 @@ class TestSwitch(app_manager.RyuApp):
         datapath = ev.msg.datapath
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
+        ofp = datapath.ofproto
 
         # Set Datapath of the switch
         dp = datapath
@@ -50,10 +51,33 @@ class TestSwitch(app_manager.RyuApp):
         print("Switch found with dipid" + dpid_)
         print(datapath)
 
+        # DNS Queries
         self.generateMatchDST(False, 53, "1.0.0.1", datapath, 10)
         self.generateMatchSRC(False, 53, "1.0.0.1", datapath, 10)
 
-        # Add some dns entries
+        # HTTPS requests
+        self.generateMatchDST(True, 443, "1.0.0.1", datapath, 15)
+        self.generateMatchSRC(True, 443, "1.0.0.1", datapath, 15)
+
+        # HTTP requests
+        self.generateMatchDST(True, 80, "1.0.0.1", datapath, 16)
+        self.generateMatchSRC(True, 80, "1.0.0.1", datapath, 16)
+
+        # SSH requests
+        self.generateMatchDST(True, 22, "1.0.0.1", datapath, 14)
+        self.generateMatchSRC(True, 22, "1.0.0.1", datapath, 14)
+
+        # Other TCP
+        # upload
+        match = parser.OFPMatch(ipv4_src="1.0.0.1", eth_type=0x0800, ip_proto=6)
+        actions = [parser.OFPActionOutput(ofp.OFPP_NORMAL, 0)]  # Treat as normal
+        self.add_flow(datapath, 2, match, actions)
+        # download
+        match = parser.OFPMatch(ipv4_dst="1.0.0.1", eth_type=0x0800, ip_proto=6)
+        actions = [parser.OFPActionOutput(ofp.OFPP_NORMAL, 0)]  # Treat as normal
+        self.add_flow(datapath, 2, match, actions)
+
+
 
         # table miss entry
         # match = parser.OFPMatch()
@@ -106,7 +130,8 @@ class TestSwitch(app_manager.RyuApp):
             self.add_flow(datapath, priority, match, actions)
 
     def flow_request(self):
-        """Requests flows in a separate thread"""
+        """Requests flows in a separate thread
+            Doesn't work                       """
         while True:
             datapath = self.dp
             if datapath is not None:

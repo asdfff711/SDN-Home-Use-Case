@@ -1,0 +1,5 @@
+dns 680
+https 0
+http 0
+ssh 5001
+other 0

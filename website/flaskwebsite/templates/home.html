@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <main role="main" class="container">
+
+        <div class="starter-template">
+          <h1>Application Layer Protocol Usage Monitor</h1>
+          <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        </div>
+
+        <div class="container" align="left">
+                <embed type="image/svg+xml" src={{graph_data|safe}} style='max-width:1000px'/>
+          </div>
+
+          <br>
+
+          <div class="container" align="left">
+                <embed type="image/svg+xml" src={{up_data|safe}} style='max-width:1000px'/>
+          </div>
+
+          <br>
+
+          <div class="container" align="left">
+                <embed type="image/svg+xml" src={{tot_data|safe}} style='max-width:1000px'/>
+          </div>
+  
+      </main>
+
+{% endblock %}

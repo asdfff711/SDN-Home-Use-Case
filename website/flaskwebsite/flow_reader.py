@@ -99,6 +99,7 @@ while True:
     dlfile = open("dl_usage.txt", "w")
     upfile = open("up_usage.txt", "w")
     totfile = open("tot_usage.txt", "w")
+    print("------------------------------------")
 
     http_total = 0
     https_total = 0
@@ -182,6 +183,6 @@ while True:
     totfile.close()
     upfile.close()
     dlfile.close()
-
+    print("------------------------------------")
     time.sleep(5)
 

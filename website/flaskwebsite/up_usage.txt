@@ -1,0 +1,5 @@
+dns 384
+https 0
+http 0
+ssh 2804
+other 0
