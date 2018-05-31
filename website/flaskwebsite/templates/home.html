@@ -23,7 +23,81 @@
           <div class="container" align="left">
                 <embed type="image/svg+xml" src={{tot_data|safe}} style='max-width:1000px'/>
           </div>
-  
+
+{% if uploads %}
+          <div>
+              <h2>Upload Usage</h2>
+                <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Protocol</th>
+                            <th scope="col">Bytes Used</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                {% for upload in uploads %}
+                                <tr>
+                                        <th>{{upload.count}}</th>
+                                        <td>{{upload.proto}}</td>
+                                        <td>{{upload.bytes}}</td>
+                                      </tr>
+                                {% endfor %}
+                        </tbody>
+                    </table>
+              
+          </div>
+{% endif %}
+
+{% if downloads %}
+          <div>
+              <h2>Download Usage</h2>
+                <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Protocol</th>
+                            <th scope="col">Bytes Used</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                {% for download in downloads %}
+                                <tr>
+                                        <th>{{download.count}}</th>
+                                        <td>{{download.proto}}</td>
+                                        <td>{{download.bytes}}</td>
+                                      </tr>
+                                {% endfor %}
+                        </tbody>
+                    </table>
+              
+          </div>
+{% endif %}
+
+{% if total %}
+          <div>
+              <h2>Total Usage</h2>
+                <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Protocol</th>
+                            <th scope="col">Bytes Used</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                {% for tot in total %}
+                                <tr>
+                                        <th>{{tot.count}}</th>
+                                        <td>{{tot.proto}}</td>
+                                        <td>{{tot.bytes}}</td>
+                                      </tr>
+                                {% endfor %}
+                        </tbody>
+                        </table>
+              
+          </div>
+{% endif %}
       </main>
 
 {% endblock %}

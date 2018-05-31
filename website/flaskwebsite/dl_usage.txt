@@ -1,5 +1,5 @@
-dns 680
-https 0
-http 0
+dns 2974
+https 687199
+http 499
 ssh 5001
 other 0
